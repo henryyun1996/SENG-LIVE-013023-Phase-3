@@ -7,8 +7,14 @@ from pet import Pet, CONN, CURSOR
 # frank = Owner("frank", "555-555-5555", "frank@gmail.com", "555 Somewhere St.")
 # frank.save()
 
-# Pet.create_table()
-# spot = Pet("spot", "dog", "chihuahua", "feisty")
+# Class Method
+Pet.create_table()
+
+spot = Pet.create("spot", "dog", "chihuahua", "feisty")
+bori = Pet.create("Bori", "dog", "Jindo", "Kind")
+
+# Instance Method
 # spot.save()
+# bori.save()
 
 import ipdb; ipdb.set_trace()

@@ -7,9 +7,34 @@ import ipdb
 
     # Create functions to be used as callbacks 
 
+# def walk(pet):
+#     print(f"{pet} walked!")
+
+# def feed(pet):
+#     print(f"{pet} fed!")
+
     # Create a higher-order function that will take a callback as an argument
 
+# def execute_task(func):
+#     return func("Rose")
+
+# ipdb.set_trace()
+
 # 2. ✅ Create a higher-order function that declares / returns an inner function
+
+# def higher_order_function():
+#     def inner_function():
+#         print("Hello from within")
+#     return inner_function
+
+# ipdb.set_trace()
+
+# def execute_task():
+#     def walk(pet):
+#         print(f"{pet} Walked!")
+#     return walk
+# walk = execute_task()
+# walk("Rose")
 
 # 3. ✅ Decorator
 
@@ -26,6 +51,13 @@ import ipdb
     # .round()
     # https://www.geeksforgeeks.org/round-function-python/
 
+def coupon_calculator(func):
+    def report_price():
+        print("Initial price = $35.00")
+        final_price = func(35.00)
+        print(f"Newly discounted Price: {final_price}")
+    return report_price
+
 # Try using a decorator with / without pie syntax '@'
 
 # Create Decorator (coupon_calculator)
@@ -34,4 +66,24 @@ import ipdb
 
 # Without pie syntax 
 
+    # report_price = coupon_calculator(calcuate_price)
+    # report_price()
+
 # With pie syntax
+    # @decorator
+    # def some_func():
+        # ...
+    # cb_function()
+
+@coupon_calculator
+def calculate_price(price):
+    
+    # :.2f => Format Price as 2 Decimal Point Floating Number
+    # :.3f => Format Price as 3 Decimal Point Floating Number
+    
+    return '{:.2f}'.format(round(price / 2, 2))
+
+# report_price = coupon_calculator(calculate_price)
+# report_price()
+    
+calculate_price()

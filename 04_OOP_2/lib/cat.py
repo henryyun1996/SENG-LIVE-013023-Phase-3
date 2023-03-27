@@ -37,3 +37,4 @@ class Cat(Pet):
         print(f'''
             Indoor: {self.indoor}
         ''')
+        
